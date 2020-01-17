@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MyserviceService } from '../myservice.service';
+import { Employee } from '../employee';
 
 
 @Component({
@@ -13,8 +14,8 @@ public currentPage = 0;
 public totalSize = 0;
 
   constructor(private myservice: MyserviceService) { }
-  employees;
-  array;
+  employees: Employee[];
+  array: Employee[];
   displayedColumns = ['name', 'age', 'salary','delete'];
   ngOnInit() {
   }
@@ -34,7 +35,7 @@ public totalSize = 0;
 
   onGetAll(){
     this.myservice.getAllEmployees().subscribe(res=>{
-      this.array = res;
+      this.array = (res as any).data;
       this.totalSize = this.array.length;
       this.iterator();
       console.log('server get all result',res)
