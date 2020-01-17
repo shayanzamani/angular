@@ -229,6 +229,11 @@
     align-items: center;
   }
 
+  label{
+    direction: rtl;
+    float: right
+  }
+
   .github-star-badge {
     color: #24292e;
     display: flex;
@@ -325,9 +330,12 @@
 
 
   </div>
+  <button style="margin-left: 40%;margin-right: 40%;width: 20%;" routerLink="/form" routerLinkActive="active"> فرم ثبت کارمند</button>
+  <br>
+  <button style="margin-left: 40%;margin-right: 40%;width: 20%;" routerLink="/showAll" routerLinkActive="active">نمایش همه کارمندان</button>
 
-  <app-firstcmp></app-firstcmp>
-  <app-secondcmp></app-secondcmp>
+  <router-outlet></router-outlet>
+  <!-- <app-secondcmp></app-secondcmp> -->
 
 
   

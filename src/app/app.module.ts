@@ -12,6 +12,7 @@ import { SecondcmpComponent } from './secondcmp/secondcmp.component';
 import { MatPaginatorModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatTableModule,
     MatPaginatorModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule
   ],
   providers: [MyserviceService],
   bootstrap: [AppComponent]

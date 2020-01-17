@@ -1,4 +1,3 @@
-<button style="margin-left: 40%;margin-right: 40%;width: 20%;" (click)=(onGetAll())>نمایش همه</button>
 
 <!-- <p-table [value]="employees">
     <ng-template pTemplate="header">
@@ -17,6 +16,7 @@
     </ng-template>
 </p-table> -->
 <div>
+    <label style="direction: rtl;float: right" >کارمندان</label>
     <table mat-table [dataSource]="employees" style="width: 100%;direction: rtl;text-align: center;">
         <!-- Position Column -->
         <ng-container matColumnDef="name">

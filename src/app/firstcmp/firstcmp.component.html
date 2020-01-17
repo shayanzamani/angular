@@ -1,17 +1,17 @@
-<div style="margin-left: 25%;margin-right: 25%;"> 
+<div> 
     <form [formGroup] = "formdata" (ngSubmit) = "onSave(formdata.value)" >
     
-        <label dir="rtl">نام </label>
+    <label style="direction: rtl;float: right;margin-right: 0;">نام </label>
        <input dir="rtl" type = "text" class = "fortextbox" name = "name" placeholder = "نام" 
           formControlName = "name"> 
        <br/> 
        
-       <label dir="rtl"> سن </label> 
-       <input dir="rtl" type = "text" class = "fortextbox" name = "age" 
+       <label style="direction: rtl;float: right"> سن </label> 
+       <input dir="rtl"  type = "text" class = "fortextbox" name = "age" 
           placeholder = "سن" formControlName = "age">
        <br/>
 
-       <label dir="rtl"> حقوق </label> 
+       <label style="direction: rtl;float: right"> حقوق </label> 
        <input dir="rtl" type = "text" class = "fortextbox" name = "salary" 
           placeholder = "حقوق" formControlName = "salary">
        <br/>

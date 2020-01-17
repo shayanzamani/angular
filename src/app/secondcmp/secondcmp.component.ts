@@ -9,7 +9,7 @@ import { Employee } from '../employee';
   styleUrls: ['./secondcmp.component.css']
 })
 export class SecondcmpComponent implements OnInit {
-public pageSize = 10;
+public pageSize = 5;
 public currentPage = 0;
 public totalSize = 0;
 
@@ -18,6 +18,7 @@ public totalSize = 0;
   array: Employee[];
   displayedColumns = ['name', 'age', 'salary','delete'];
   ngOnInit() {
+    this.onGetAll()
   }
 
   public handlePage(e: any) {
@@ -43,8 +44,7 @@ public totalSize = 0;
   }
 
   onDelete(data){
-    console.log(data)
-    this.myservice.deleteEmployee(data).subscribe(res=>{
+      this.myservice.deleteEmployee(data).subscribe(res=>{
       console.log('server deleted result',res)
     })
   }
