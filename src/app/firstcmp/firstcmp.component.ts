@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MyserviceService } from '../myservice.service';
 import { Employee } from '../employee';
+import { Observable } from 'rxjs';
 
 
 
@@ -15,8 +16,8 @@ export class FirstcmpComponent implements OnInit {
   pageSize = 5;
   currentPage = 0;
   totalSize = 0;
-  employees;
-  array;
+  employees: Employee[];
+  array: Employee[];
   displayedColumns = ['name', 'age', 'salary','delete','edit'];
   updating = false
   updating_id = null
@@ -65,13 +66,14 @@ export class FirstcmpComponent implements OnInit {
   private iterator() {
     const end = (this.currentPage + 1) * this.pageSize;
     const start = this.currentPage * this.pageSize;
-    const part = this.array.slice(start, end);
+
+    let part = this.array.slice(start, end);
     this.employees = part;
   }
 
   onGetAll(){
-    this.myservice.getAllEmployees().subscribe(res=>{
-      this.array = res;
+    this.myservice.getAllEmployees().subscribe((res)=>{
+      this.array = (res as any).data;
       this.totalSize = this.array.length;
       this.iterator();
       console.log('server get all result',res)
